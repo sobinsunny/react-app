@@ -1,21 +1,36 @@
 	
 import React, { Component } from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 class Profile extends Component {
+  constructor() {
+    super();
+    this.state = {
+      status: false
+    }
+  };
+
   render() {
     return (
       <div className="shopping-list">
-        <h1>Domains List for {this.props.name}</h1>
-        <ul>
-          <li>Ruby On Rails</li>
-          <li>Ruby</li>
-          <li>Postgress</li>
-        </ul>
+        <button className="square" onClick={() => changeState(this)}>
+        { (this.state.status ? "Clicked" : "Not clicked")}
+        </button>
+          <h1>Domains  { (this.state.status ? "Clicked" : "Not clicked")} </h1>
+          <ul>
+           <li>Ruby On Rails</li>
+           <li>Ruby</li>
+           <li>Postgress</li>
+          </ul>
       </div>
-    );
+      );
+    }
   }
+
+function changeState(bindingData){
+  bindingData.setState({status: !bindingData.state.status})
 }
 
+
 export default Profile;
+

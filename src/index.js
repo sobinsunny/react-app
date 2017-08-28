@@ -1,12 +1,21 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import Profile from './Profile';
 
+import { Route , Router, Switch} from 'react-router'
+import { BrowserRouter } from 'react-router-dom'
 import registerServiceWorker from './registerServiceWorker';
 
-ReactDOM.render(<App />, document.getElementById('root'));
-ReactDOM.render(<Profile />, document.getElementById('profile'));
+import './index.css';
+import App from './App';
 
-registerServiceWorker();
+const app = document.getElementById('root')
+
+ReactDOM.render(
+	<div>
+		<div>YouTube</div>
+		<div>
+			< App />
+		</div>
+	</div>
+,  
+app);
